@@ -187,6 +187,14 @@ configuration is centralized in fixtures, shared logic lives in helpers, and tes
 files stay focused purely on validating behavior. It also avoids duplication when
 the same setup logic is needed across multiple test files.
 
+### Docker base image (Node Alpine)
+
+The Node Alpine image was chosen over the default Node image as the base for the
+Docker container. Alpine-based images have a significantly smaller attack surface,
+which translates to fewer vulnerabilities, validated through Snyk scanner experience
+in a previous project. For the scope of this project, Alpine provides everything
+needed without the overhead of a full Debian-based image.
+
 ## References
 
 ### Articles & Documentation
