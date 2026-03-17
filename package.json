@@ -1,0 +1,45 @@
+{
+  "name": "asset-tracking-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "format": "prettier --write .",
+    "test": "jest --runInBand --forceExit",
+    "test:watch": "jest --runInBand --watch",
+    "test:coverage": "jest --runInBand --coverage --forceExit",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:test:up": "docker-compose up -d mysql_test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinta3/asset-tracking-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sinta3/asset-tracking-api/issues"
+  },
+  "homepage": "https://github.com/sinta3/asset-tracking-api#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jest": "^30.3.0",
+    "joi": "^18.0.2",
+    "jsonwebtoken": "^9.0.3",
+    "limiter": "^3.0.0",
+    "mysql2": "^3.19.1",
+    "sequelize": "^6.37.8",
+    "supertest": "^7.2.2",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prettier": "^3.8.1",
+    "sequelize-cli": "^6.6.5"
+  }
+}
