@@ -37,12 +37,13 @@ cp .env.example .env
 
 | Variable                        | Description                                           |
 |---------------------------------|-------------------------------------------------------|
-| `DB_HOST`                       | MySQL host (use `db` if running via Docker)           |
+| `DB_HOST`                       | MySQL host (use `service name` if use Docker)         |
 | `DB_PORT`                       | MySQL port (default: `3306`)                          |
 | `DB_NAME`                       | Database name                                         |
 | `DB_USER`                       | Database user                                         |
 | `DB_PASSWORD`                   | Database password                                     |
 | `DB_TEST_NAME`                  | Separate database name used for integration tests     |
+| `DB_TEST_PORT`                  | Separate database port used for integration tests     |
 | `NODE_ENV`                      | Environment mode (e.g. `development`, `test`)         |
 | `JWT_ACCESS_TOKEN_SECRET`       | Secret key used to sign JWT tokens                    |
 | `JWT_ACCESS_TOKEN_EXPIRED_TIME` | Token expiry duration (e.g. `7d`, `1h`)               |
@@ -63,7 +64,7 @@ Once the containers are up, migrations already executed from the seed.sql file
 
 docker-compose exec app npm run test             # run all tests
 docker-compose exec app npm run test -- --coverage  # with coverage report
-docker-compose exec app npm run test -- --watch     # watch mode
+docker-compose exec app npm run test -- --watchAll     # watch mode
 
 Tests run against a separate database (`DB_TEST_NAME`) to avoid interfering with development data.
 

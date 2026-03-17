@@ -11,6 +11,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      mysql_test:
+        condition: service_healthy
     volumes:
       - .:/app
       - /app/node_modules
@@ -64,7 +66,7 @@ services:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - ./docker/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./docker/init.test.sql:/docker-entrypoint-initdb.d/01-init.test.sql
     healthcheck:
       test:
         [
