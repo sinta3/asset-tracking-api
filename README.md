@@ -196,6 +196,13 @@ which translates to fewer vulnerabilities, validated through Snyk scanner experi
 in a previous project. For the scope of this project, Alpine provides everything
 needed without the overhead of a full Debian-based image.
 
+### Error handling (centralized error handler middleware)
+
+All errors are thrown from services and controllers without directly sending a response.
+A single error handler middleware intercepts all thrown errors and is responsible for
+sending the HTTP response. This keeps error response formatting consistent across the
+entire application and avoids scattering response logic throughout the codebase.
+
 ## References
 
 ### Articles & Documentation
